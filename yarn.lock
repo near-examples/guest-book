@@ -2,46 +2,55 @@
 # yarn lockfile v1
 
 
-"@as-pect/assembly@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@as-pect/assembly/-/assembly-3.0.0-beta.2.tgz#06787e0c0aa9322c12adde64aa7aa25bf92f043f"
-  integrity sha512-vc8VSzSY9gt2vXiKPwsgZP+9ze718+6pqpw9N/aKS2s2If/PcPGoy+iOg/FnFNw+HhD+yptEV6e5lC9Kz8hzBw==
+"@as-pect/assembly@^3.1.2":
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@as-pect/assembly/-/assembly-3.1.2.tgz#3b8a3e17386ac76897a0c097c87b17a6e7eb8b0c"
+  integrity sha512-RHmiU5D8sFVWA2BgoAioKmewnGibN592vT8kCweYN6fQ0TL2UGvGEdMvAdAgGdc0fgdWcAy9PIXGxsfBXpR4MA==
 
-"@as-pect/cli@^3.0.0-beta.0":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@as-pect/cli/-/cli-3.0.0-beta.2.tgz#5288fddc319b7ea519231be00c652f0c4ab767b0"
-  integrity sha512-umklLdqPMpO3jqa7XvGIKucnKibuKeJizI8Uug+5NJ400OBPS54QLDB4jQTuPNvXG6HHK93vc17U/vfQYIgc3Q==
+"@as-pect/cli@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@as-pect/cli/-/cli-3.1.4.tgz#805ed82611583084e104a1592e008d607e7c5d31"
+  integrity sha512-0SNeUhn0ZW126qsoR/VUHvvqEjCg8l4IeTStqzHyb97usPEHLRuBI/dNZzJtqJBQLt1rb7xdQ2lZAdSSDTrBQA==
   dependencies:
-    "@as-pect/assembly" "^3.0.0-beta.2"
-    "@as-pect/core" "^3.0.0-beta.2"
+    "@as-pect/assembly" "^3.1.2"
+    "@as-pect/core" "^3.1.4"
     chalk "^3.0.0"
     glob "^7.1.6"
   optionalDependencies:
-    "@as-pect/csv-reporter" "^3.0.0-beta.2"
-    "@as-pect/json-reporter" "^3.0.0-beta.2"
+    "@as-pect/csv-reporter" "^3.1.4"
+    "@as-pect/json-reporter" "^3.1.4"
 
-"@as-pect/core@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@as-pect/core/-/core-3.0.0-beta.2.tgz#eda13229256308cfc9beb24e92ae3db8d282e329"
-  integrity sha512-GWNXUp1zszuzTvrt03BtYFM8ficeyFhH3/LIO6KvB/Z54easBs1QbAryMMH1vsGFiwaKqAn3nhK5qDgMhS6ouw==
+"@as-pect/core@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@as-pect/core/-/core-3.1.4.tgz#a6903717f6977af5b813d6f23a4cd0099e1ac00a"
+  integrity sha512-qLW0KxZXeNvWl0ZxM65O9AD8JZmHR5jUWPvfGvcshq5rVcH3g/Ny6MG5Atg5qy4RFR8n4aXhQNOS/axjAtZI+Q==
   dependencies:
-    "@as-pect/assembly" "^3.0.0-beta.2"
+    "@as-pect/assembly" "^3.1.2"
+    "@as-pect/snapshots" "^3.1.4"
     chalk "^3.0.0"
     long "^4.0.0"
 
-"@as-pect/csv-reporter@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@as-pect/csv-reporter/-/csv-reporter-3.0.0-beta.2.tgz#26e354371321f1dd3c71b614e837e5abaf9ed94b"
-  integrity sha512-MvRnWHVdDSjmU00RKApxIGKGP7oDNMVSr/FlIVVPuQc4WTqT2fJrjt5Gaasu7kkx/vXe6gedZ1qw2yOpMCqMQQ==
+"@as-pect/csv-reporter@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@as-pect/csv-reporter/-/csv-reporter-3.1.4.tgz#1f65b89ed514f6f7f77621e0a2bbd6028ed84297"
+  integrity sha512-tLXrrqUgH2gIPMFxSXoGpXyggqUkfuiJMJXoUnRpe8omzEvE4sW1OueXW+t+LKCI1ha2BYNl9ALR163G3gaOEw==
   dependencies:
-    "@as-pect/core" "^3.0.0-beta.2"
+    "@as-pect/core" "^3.1.4"
 
-"@as-pect/json-reporter@^3.0.0-beta.2":
-  version "3.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@as-pect/json-reporter/-/json-reporter-3.0.0-beta.2.tgz#55e4041394f8aefd0414217e7afb4b4a865c1f06"
-  integrity sha512-UG0oogbB1hmZuJTpiOjU50NdIIyhhvO3z7w5cDzX1JW4RIx4Q4ZpUUQDVh9A7XCo/Uzi8KePgCUfdE/c4hkPJg==
+"@as-pect/json-reporter@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@as-pect/json-reporter/-/json-reporter-3.1.4.tgz#f985f8f6ef3fb2b59a5db38a7851c41be6a7a29a"
+  integrity sha512-mVzZ045tG022hTFv1d7d7+ge8nipwi8wtmK/ZoiEvxlgnH33tSyOk39TGv2bdXGp0wM1aKhZ+3wnfd1RUr5sBg==
   dependencies:
-    "@as-pect/core" "^3.0.0-beta.2"
+    "@as-pect/core" "^3.1.4"
+
+"@as-pect/snapshots@^3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@as-pect/snapshots/-/snapshots-3.1.4.tgz#4303bc5ef925f1f1ba4aa5445073d0202e45d99d"
+  integrity sha512-Gx7JHR2VJFDlrrBCC40YYkK00zF3B7q/bq4NwNOrOXVXW9ty6qH3ITc0Y8IufF3mLl8D8q6xCswXF2wVgxBPhg==
+  dependencies:
+    diff "^4.0.2"
+    nearley "^2.19.1"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.8.3":
   version "7.8.3"
@@ -3313,6 +3322,11 @@ diff-sequences@^25.2.1:
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-25.2.1.tgz#fcfe8aa07dd9b0c648396a478dabca8e76c6ab27"
   integrity sha512-foe7dXnGlSh3jR1ovJmdv+77VQj98eKCHHwJPbZ2eEf0fHwKbkZicpPxEch9smZ+n2dnF6QFwkOQdLq9hpeJUg==
 
+diff@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.2.tgz#60f3aecb89d5fae520c11aa19efc2bb982aade7d"
+  integrity sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
+
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
@@ -3321,6 +3335,11 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+discontinuous-range@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/discontinuous-range/-/discontinuous-range-1.0.0.tgz#e38331f0844bba49b9a9cb71c771585aab1bc65a"
+  integrity sha1-44Mx8IRLukm5qctxx3FYWqsbxlo=
 
 doctrine@1.5.0:
   version "1.5.0"
@@ -6562,6 +6581,11 @@ mkdirp@^0.5.1, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
+moo@^0.5.0:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/moo/-/moo-0.5.1.tgz#7aae7f384b9b09f620b6abf6f74ebbcd1b65dbc4"
+  integrity sha512-I1mnb5xn4fO80BH9BLcF0yLypy2UKl+Cb01Fu0hJRkJjlCRtxZMWkTdAtDd5ZqCOxtCkhmRwyI57vWT+1iZ67w==
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -6638,12 +6662,12 @@ near-runtime-ts@^0.7.1-1:
   dependencies:
     near-sdk-as "^0.1.0-1"
 
-near-sdk-as@^0.1.0-1, near-sdk-as@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/near-sdk-as/-/near-sdk-as-0.1.2.tgz#7f8a29cdf5ad1d620d1831e4902eb3513ac3287a"
-  integrity sha512-/orGJ3wJj4yXmB/YEBp0bcp+CqvQbxM0L9KO1+NZgnBz5SW2wGTMFJ6/SBg/M1BGJei/5Qo2pzpVk22XFDKFjw==
+near-sdk-as@^0.1.0-1, near-sdk-as@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/near-sdk-as/-/near-sdk-as-0.1.4.tgz#ebde486f4999e83b76db208a8f52841dfb68821d"
+  integrity sha512-Kgi6dk5fq2xL5/g2rUYgUXTppkgml49QGRKcfBWZnaFa1xJGsgrU9rLvC2qfUqsmFQKJKVK83ROx0uYdic5IsQ==
   dependencies:
-    "@as-pect/cli" "^3.0.0-beta.0"
+    "@as-pect/cli" "^3.1.4"
     as-bignum "^0.1.5"
     assemblyscript-json "^0.3.0"
     near-bindgen-as "^1.3.1-1"
@@ -6669,6 +6693,17 @@ near-shell@^0.20.1:
     update-notifier "^4.0.0"
     v8flags "^3.1.3"
     yargs "^15.0.1"
+
+nearley@^2.19.1:
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/nearley/-/nearley-2.19.1.tgz#4af4006e16645ff800e9f993c3af039857d9dbdc"
+  integrity sha512-xq47GIUGXxU9vQg7g/y1o1xuKnkO7ev4nRWqftmQrLkfnE/FjRqDaGOUakM8XHPn/6pW3bGjU2wgoJyId90rqg==
+  dependencies:
+    commander "^2.19.0"
+    moo "^0.5.0"
+    railroad-diagrams "^1.0.0"
+    randexp "0.4.6"
+    semver "^5.4.1"
 
 nearlib@^0.20.0:
   version "0.20.1"
@@ -8047,6 +8082,19 @@ quote-stream@^1.0.1, quote-stream@~1.0.2:
     minimist "^1.1.3"
     through2 "^2.0.0"
 
+railroad-diagrams@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/railroad-diagrams/-/railroad-diagrams-1.0.0.tgz#eb7e6267548ddedfb899c1b90e57374559cddb7e"
+  integrity sha1-635iZ1SN3t+4mcG5Dlc3RVnN234=
+
+randexp@0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/randexp/-/randexp-0.4.6.tgz#e986ad5e5e31dae13ddd6f7b3019aa7c87f60ca3"
+  integrity sha512-80WNmd9DA0tmZrw9qQa62GPPWfuXJknrmVmLcxvq4uZBdYqb1wYoKTmnlGUchvVWe0XiLupYkBoXVOxz3C8DYQ==
+  dependencies:
+    discontinuous-range "1.0.0"
+    ret "~0.1.10"
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -8674,7 +8722,7 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-scheduler@^0.19.0, scheduler@^0.19.1:
+scheduler@^0.19.1:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
   integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
