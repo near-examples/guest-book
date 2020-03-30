@@ -6640,10 +6640,10 @@ near-runtime-ts@^0.7.1-1:
   dependencies:
     near-sdk-as "^0.1.0-1"
 
-near-sdk-as@^0.1.0-1, near-sdk-as@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/near-sdk-as/-/near-sdk-as-0.1.3.tgz#88ab22ee5105b51b3b5d38953488fd5c5bf67289"
-  integrity sha512-rt2Qg85nSRomoTqcSMek7Pln+2Q3UdbGp4XEsFPzGNki4OvkREdV5uT8CH9eEOBSmmRPaobJnMrMzboodRgA3A==
+near-sdk-as@^0.1.0-1, near-sdk-as@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/near-sdk-as/-/near-sdk-as-0.1.5.tgz#abbc963e3611557c77e8cb966196a1d81489219c"
+  integrity sha512-0gI6jv8Ro1q4SqP2rR8CJE+7k52t/naFS65TwktBuzH2RMh3+yqrAMPP6S1GsVvU9ZC81QXWfkiQqiVVxF9MJg==
   dependencies:
     "@as-pect/cli" "^3.1.4"
     as-bignum "^0.1.5"
@@ -8700,7 +8700,7 @@ saxes@^3.1.9:
   dependencies:
     xmlchars "^2.1.1"
 
-scheduler@^0.19.0, scheduler@^0.19.1:
+scheduler@^0.19.1:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
   integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
