@@ -5503,10 +5503,10 @@ ncp@^2.0.0:
   resolved "https://registry.yarnpkg.com/ncp/-/ncp-2.0.0.tgz#195a21d6c46e361d2fb1281ba38b91e9df7bdbb3"
   integrity sha1-GVoh1sRuNh0vsSgbo4uR6d9727M=
 
-near-api-js@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/near-api-js/-/near-api-js-0.23.0.tgz#422108b33ecfd824e645473997ba00c9f45e0bf2"
-  integrity sha512-rGEgQdjtY9JdwaveDOEauB1voH7eTGM41cJettBO8MKbxPl4obCEiaQAhA80TxJ1I8t3LQhvbI6B8+/EitaeUw==
+near-api-js@^0.23.0, near-api-js@^0.23.1:
+  version "0.23.1"
+  resolved "https://registry.yarnpkg.com/near-api-js/-/near-api-js-0.23.1.tgz#002f158ca719b5154faa697054eb06dedfc218a6"
+  integrity sha512-ZCf+OCmz6pKfi2zEQ+sdVWS8NbBeEi0s+xOg1mD4ThDg0vrI/WJaqyjLrc9GWu/IjDUh+rd4ZI0Vp7R81mCJ4A==
   dependencies:
     "@types/bn.js" "^4.11.5"
     bn.js "^5.0.0"
@@ -5559,10 +5559,10 @@ near-sdk-as@^0.1.5:
     semver "^7.1.3"
     wasm-mock-vm "^1.2.1"
 
-near-shell@^0.20.6:
-  version "0.20.6"
-  resolved "https://registry.yarnpkg.com/near-shell/-/near-shell-0.20.6.tgz#22bbb743cf19ee968d8cf074494bab1e58d9ec5f"
-  integrity sha512-RtbaMXdhGAE8Z8xCWqRfTYXcjtVdG6skQfaLgocAMn8ADYJlAH+ouRMm1nBWsD6chLvNAvZbfQNt67wzN64Lgg==
+near-shell@^0.20.8:
+  version "0.20.8"
+  resolved "https://registry.yarnpkg.com/near-shell/-/near-shell-0.20.8.tgz#005d2289ff4293907ee972721a4e526ceeef8d96"
+  integrity sha512-eVCglVN1lrocDZXQ+tRYeS+W7v5/4/WLpYLqMp6sFaLZKYAeQY3qBJiGLV4KqLuq7rxyGlVhsrOBHA60fPriAw==
   dependencies:
     bn "^1.0.5"
     bs58 "^4.0.1"
@@ -5571,7 +5571,7 @@ near-shell@^0.20.6:
     is-ci "^2.0.0"
     jest-environment-node "^25.1.0"
     ncp "^2.0.0"
-    nearlib "^0.22.0"
+    near-api-js "^0.23.1"
     open "^7.0.1"
     rimraf "^3.0.0"
     stoppable "^1.1.0"
@@ -5590,22 +5590,6 @@ nearley@^2.19.1:
     railroad-diagrams "^1.0.0"
     randexp "0.4.6"
     semver "^5.4.1"
-
-nearlib@^0.22.0:
-  version "0.22.0"
-  resolved "https://registry.yarnpkg.com/nearlib/-/nearlib-0.22.0.tgz#e7e9ed88752fb533c0920720f962f97395ddfec6"
-  integrity sha512-6yTc5Ti5oHFak8GSvuzHF7gTRIXRDIs822LiIqJWqoJ5emWktAZqWowS9taAazfG/joU2H0B3WX5Z46oIv4U0w==
-  dependencies:
-    "@types/bn.js" "^4.11.5"
-    bn.js "^5.0.0"
-    bs58 "^4.0.0"
-    error-polyfill "^0.1.2"
-    http-errors "^1.7.2"
-    js-sha256 "^0.9.0"
-    mustache "^4.0.0"
-    node-fetch "^2.3.0"
-    text-encoding-utf-8 "^1.0.2"
-    tweetnacl "^1.0.1"
 
 nice-try@^1.0.4:
   version "1.0.5"
