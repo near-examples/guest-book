@@ -75,9 +75,9 @@ Now authorize NEAR shell for this new account, and follow the instructions it gi
 Step 2: set contract name in code
 ---------------------------------
 
-Modify the line in `src/config.js` that sets the account name of the contract. Set it to the account id you used above.
+Modify the line in `src/nearConfig.js` that sets the account name of the contract. Set it to the account id you used above.
 
-    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-account-here!'
+    export const contractName = process.env.CONTRACT_NAME || 'your-account-here!'
 
 
 Step 3: deploy!

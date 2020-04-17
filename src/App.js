@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { contractName } from './nearConfig'
 
-const App = ({ contract, nearConfig, wallet }) => {
+const App = ({ contract, wallet }) => {
   const [messages, setMessages] = useState([])
   const [accountId, setAccountId] = useState(wallet.getAccountId())
   const [inputText, setInputText] = useState('')
@@ -14,7 +15,7 @@ const App = ({ contract, nearConfig, wallet }) => {
 
   const signIn = useCallback(() => {
     wallet.requestSignIn(
-      nearConfig.contractName,
+      contractName,
       'NEAR Guest Book'
     )
   }, [])
@@ -98,9 +99,6 @@ App.propTypes = {
   contract: PropTypes.shape({
     addMessage: PropTypes.func.isRequired,
     getMessages: PropTypes.func.isRequired
-  }).isRequired,
-  nearConfig: PropTypes.shape({
-    contractName: PropTypes.string.isRequired
   }).isRequired,
   wallet: PropTypes.shape({
     getAccountId: PropTypes.func.isRequired,

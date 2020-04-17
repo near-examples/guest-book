@@ -1,19 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import getConfig from './config.js'
 import * as nearAPI from 'near-api-js'
+import {
+  contractName,
+  keyPath,
+  masterAccount,
+  networkId,
+  nodeUrl
+} from './nearConfig.js'
 
 // Initializing contract
 async function initContract () {
-  const nearConfig = getConfig(process.env.NODE_ENV || 'development')
-
   // Initializing connection to the NEAR DevNet
   const near = await nearAPI.connect({
     deps: {
       keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore()
     },
-    ...nearConfig
+    keyPath,
+    masterAccount,
+    networkId,
+    nodeUrl
   })
 
   // Needed to access wallet
@@ -23,7 +30,7 @@ async function initContract () {
   const accountId = walletConnection.getAccountId()
 
   // Initializing our contract APIs by contract name and configuration
-  const contract = await new nearAPI.Contract(walletConnection.account(), nearConfig.contractName, {
+  const contract = await new nearAPI.Contract(walletConnection.account(), contractName, {
     // View methods are read-only – they don't modify the state, but usually return some value
     viewMethods: ['getMessages'],
     // Change methods can modify the state, but you don't receive the returned value when called
@@ -32,13 +39,13 @@ async function initContract () {
     sender: accountId
   })
 
-  return { contract, nearConfig, walletConnection }
+  return { contract, walletConnection }
 }
 
 window.nearInitPromise = initContract()
-  .then(({ contract, nearConfig, walletConnection }) => {
+  .then(({ contract, walletConnection }) => {
     ReactDOM.render(
-      <App contract={contract} nearConfig={nearConfig} wallet={walletConnection} />,
+      <App contract={contract} wallet={walletConnection} />,
       document.getElementById('root')
     )
   })
