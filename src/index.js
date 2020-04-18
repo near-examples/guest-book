@@ -4,8 +4,6 @@ import App from './App'
 import * as nearAPI from 'near-api-js'
 import {
   contractName,
-  keyPath,
-  masterAccount,
   networkId,
   nodeUrl
 } from './nearConfig.js'
@@ -17,8 +15,6 @@ async function initContract () {
     deps: {
       keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore()
     },
-    keyPath,
-    masterAccount,
     networkId,
     nodeUrl
   })
