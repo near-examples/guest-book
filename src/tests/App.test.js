@@ -1,7 +1,7 @@
 import 'regenerator-runtime/runtime'
 import React from 'react'
 import TestRenderer from 'react-test-renderer'
-import App from '../../App'
+import App from '../App'
 const { act } = TestRenderer
 
 // Declare stubs for contract, walletConnection, and nearConfig
@@ -19,13 +19,6 @@ const walletConnection = {
   signOut: () => null,
   isSignedIn: () => false,
   getAccountId: () => 'test.near'
-}
-const nearConfig = {
-  networkId: 'default',
-  nodeUrl: 'https://rpc.nearprotocol.com',
-  contractName: 'test.near',
-  walletUrl: 'https://wallet.nearprotocol.com',
-  helperUrl: 'https://near-contract-helper.onrender.com'
 }
 
 // For UI tests, use pattern from: https://reactjs.org/docs/test-renderer.html
@@ -46,7 +39,7 @@ it('renders with proper title', () => {
 
   act(() => {
     testRenderer = TestRenderer.create(
-      <App contract={contract} wallet={walletConnection} nearConfig={nearConfig} />
+      <App contract={contract} wallet={walletConnection} />
     )
   })
 

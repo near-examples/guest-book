@@ -47,25 +47,7 @@
     "regenerator-runtime": "^0.13.5"
   },
   "jest": {
-    "projects": [
-      {
-        "displayName": "User interface tests",
-        "testEnvironment": "jsdom",
-        "testMatch": [
-          "<rootDir>/src/tests/ui/*.js"
-        ]
-      },
-      {
-        "displayName": "Integration tests",
-        "testEnvironment": "near-shell/test_environment",
-        "testMatch": [
-          "<rootDir>/src/tests/integration/*.js"
-        ]
-      }
-    ],
-    "testPathIgnorePatterns": [
-      "assembly/*"
-    ]
+    "testMatch": [ "<rootDir>/src/tests/*.js" ]
   },
   "browserslist": {
     "production": [
