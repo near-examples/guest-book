@@ -7,11 +7,9 @@ import { context, u128, PersistentVector } from "near-sdk-as";
 export class PostedMessage {
   premium: boolean;
   sender: string;
-  ratring: i8;
   constructor(public text: string, public rating: i8) {
     this.premium = context.attachedDeposit >= u128.from('10000000000000000000000');
     this.sender = context.sender;
-    this.rating = rating;
   }
 }
 /** 
