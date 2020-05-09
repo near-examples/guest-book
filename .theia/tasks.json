@@ -1,0 +1,9 @@
+{
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "build:contract",
+            "problemMatcher": []
+        }
+    ]
+}

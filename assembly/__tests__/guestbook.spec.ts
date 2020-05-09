@@ -2,16 +2,17 @@ import { addMessage, getMessages } from '../main'
 import { PostedMessage, messages } from '../model'
 
 
-function createMessage (text: string): PostedMessage {
-  return new PostedMessage(text);
+function createMessage (text: string, rating: i8): PostedMessage {
+  return new PostedMessage(text, rating);
 }
 
 const hello: string = 'hello world'
-const message = createMessage(hello)
+const rating: i8 = 2
+const message = createMessage(hello, rating)
 
 describe('messages should be able to', () => {
   beforeEach(()  => {
-    addMessage(hello)
+    addMessage(hello, rating)
   });
 
   afterEach( () => {
@@ -22,7 +23,7 @@ describe('messages should be able to', () => {
 
   it('add a message', () => {
     expect(messages.length).toBe(1, 'should only contain one message')
-    expect(messages[0]).toStrictEqual(message, 'message should be "hello world"')
+    expect(messages[0]).toStrictEqual(message, 'message should be "hello world" and rating 5')
   })
 
   it('retrive messages', () => {
@@ -36,8 +37,8 @@ describe('messages should be able to', () => {
     const newMessages: PostedMessage[] = []
     for (let i: i32 = 0; i < 10; i++) {
       const text = 'message #' + i.toString()
-      newMessages.push(createMessage(text))
-      addMessage(text)
+      newMessages.push(createMessage(text, 4))
+      addMessage(text, 4)
     }
     const messages = getMessages()
     log(messages.slice(7, 10))

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Big from 'big.js'
 
 const SUGGESTED_DONATION = '1'
+const SUGGESTED_RATING = 2
 const BOATLOAD_OF_GAS = Big(1).times(10 ** 16).toFixed()
 
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
@@ -26,6 +27,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // add uuid to each message, so we know which one is already known
     contract.addMessage(
       { text: message.value },
+      { rating: rating.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
@@ -79,6 +81,19 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
               />
             </p>
             <p>
+              <label htmlFor="rating">Ratingx:</label>
+              <input
+                autoComplete="off"
+                defaultValue={SUGGESTED_RATING}
+                id="rating"
+                max="5"
+                min="0"
+                step="1"
+                defaultValue="3"
+                type="number"
+              />
+            </p>
+            <p>
               <label htmlFor="donation">Donation (optional):</label>
               <input
                 autoComplete="off"
@@ -104,7 +119,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
             // TODO: format as cards, add timestamp
             <p key={i} className={message.premium ? 'is-premium' : ''}>
               <strong>{message.sender}</strong>:<br/>
-              {message.text}
+              {message.text} {message.rating}
             </p>
           )}
         </>
