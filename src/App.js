@@ -26,8 +26,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
     contract.addMessage(
-      { text: message.value },
-      { rating: rating.value },
+      { text: message.value, rating: rating.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
@@ -35,6 +34,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         setMessages(messages)
 
         message.value = ''
+        rating.value = ''
         donation.value = SUGGESTED_DONATION
         fieldset.disabled = false
         message.focus()
