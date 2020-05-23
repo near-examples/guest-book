@@ -17,8 +17,8 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const onSubmit = useCallback(e => {
     e.preventDefault()
 
-    const { fieldset, message, donation } = e.target.elements
-
+    const { fieldset, message } = e.target.elements
+    let donation = 0;
     fieldset.disabled = true
 
     // TODO: optimistically update page with new message,
@@ -59,44 +59,12 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
-        <h1>NEAR Guest Book</h1>
+        <h1>Chat Room</h1>
         {currentUser
           ? <button onClick={signOut}>Log out</button>
           : <button onClick={signIn}>Log in</button>
         }
       </header>
-      {currentUser && (
-        <form onSubmit={onSubmit}>
-          <fieldset id="fieldset">
-            <p>Sign the guest book, { currentUser.accountId }!</p>
-            <p className="highlight">
-              <label htmlFor="message">Message:</label>
-              <input
-                autoComplete="off"
-                autoFocus
-                id="message"
-                required
-              />
-            </p>
-            <p>
-              <label htmlFor="donation">Donation (optional):</label>
-              <input
-                autoComplete="off"
-                defaultValue={SUGGESTED_DONATION}
-                id="donation"
-                max={Big(currentUser.balance).div(10 ** 24)}
-                min="0"
-                step="0.01"
-                type="number"
-              />
-              <span title="NEAR Tokens">Ⓝ</span>
-            </p>
-            <button type="submit">
-              Sign
-            </button>
-          </fieldset>
-        </form>
-      )}
       {!!messages.length && (
         <>
           <h2>Messages</h2>
@@ -108,6 +76,38 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
             </p>
           )}
         </>
+      )}
+      {currentUser && (
+        <form onSubmit={onSubmit}>
+          <fieldset id="fieldset">
+            <p>Sending Message as, { currentUser.accountId }!</p>
+            <p className="highlight">
+              <label htmlFor="message">Message:</label>
+              <input
+                autoComplete="off"
+                autoFocus
+                id="message"
+                required
+              />
+            </p>
+            {/*<p>
+              <label htmlFor="donation">Donation (optional):</label>
+              <input
+                autoComplete="off"
+                defaultValue={SUGGESTED_DONATION}
+                id="donation"
+                max={Big(currentUser.balance).div(10 ** 24)}
+                min="0"
+                step="0.01"
+                type="number"
+              />
+              <span title="NEAR Tokens">Ⓝ</span>
+            </p>*/}
+            <button type="submit">
+              Send
+            </button>
+          </fieldset>
+        </form>
       )}
     </main>
   )
