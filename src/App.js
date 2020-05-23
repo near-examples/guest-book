@@ -17,8 +17,8 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
   const onSubmit = useCallback(e => {
     e.preventDefault()
 
-    const { fieldset, message } = e.target.elements
-    let donation = 0;
+    const { fieldset, message, donation } = e.target.elements
+
     fieldset.disabled = true
 
     // TODO: optimistically update page with new message,
@@ -59,28 +59,16 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         alignItems: 'center',
         justifyContent: 'space-between'
       }}>
-        <h1>Chat Room</h1>
+        <h1>NEAR Guest Book</h1>
         {currentUser
           ? <button onClick={signOut}>Log out</button>
           : <button onClick={signIn}>Log in</button>
         }
       </header>
-      {!!messages.length && (
-        <>
-          <h2>Messages</h2>
-          {messages.map((message, i) =>
-            // TODO: format as cards, add timestamp
-            <p key={i} className={message.premium ? 'is-premium' : ''}>
-              <strong>{message.sender}</strong>:<br/>
-              {message.text}
-            </p>
-          )}
-        </>
-      )}
       {currentUser && (
         <form onSubmit={onSubmit}>
           <fieldset id="fieldset">
-            <p>Sending Message as, { currentUser.accountId }!</p>
+            <p>Sign the guest book, { currentUser.accountId }!</p>
             <p className="highlight">
               <label htmlFor="message">Message:</label>
               <input
@@ -90,7 +78,7 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
                 required
               />
             </p>
-            {/*<p>
+            <p>
               <label htmlFor="donation">Donation (optional):</label>
               <input
                 autoComplete="off"
@@ -102,12 +90,24 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
                 type="number"
               />
               <span title="NEAR Tokens">Ⓝ</span>
-            </p>*/}
+            </p>
             <button type="submit">
-              Send
+              Sign
             </button>
           </fieldset>
         </form>
+      )}
+      {!!messages.length && (
+        <>
+          <h2>Messages</h2>
+          {messages.map((message, i) =>
+            // TODO: format as cards, add timestamp
+            <p key={i} className={message.premium ? 'is-premium' : ''}>
+              <strong>{message.sender}</strong>:<br/>
+              {message.text}
+            </p>
+          )}
+        </>
       )}
     </main>
   )

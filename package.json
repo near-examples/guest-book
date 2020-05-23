@@ -7,7 +7,9 @@
     "build:contract": "node asconfig.js",
     "build:web": "parcel build src/index.html --public-url ./",
     "deploy": "yarn build && near deploy && gh-pages -d dist/",
-    "dev": "yarn build:contract && near dev-deploy && nodemon --watch assembly -e ts --exec 'yarn dev:start'",
+    "dev:deploy:contract": "near dev-deploy",
+    "deploy:contract": "near deploy",
+    "dev": "yarn build && yarn dev:deploy:contract && env-cmd -f ./neardev/dev-account.env parcel src/index.html",
     "lint": "eslint .",
     "start": "yarn deploy && parcel src/index.html",
     "dev:start": "env CONTRACT_NAME=$(cat neardev/dev-account) parcel src/index.html",
@@ -42,6 +44,7 @@
   },
   "dependencies": {
     "big.js": "^5.2.2",
+    "env-cmd": "^10.1.0",
     "near-api-js": "^0.24.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
