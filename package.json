@@ -7,12 +7,10 @@
     "build:contract": "node asconfig.js",
     "build:web": "parcel build src/index.html --public-url ./",
     "deploy": "yarn build && near deploy && gh-pages -d dist/",
-    "dev:deploy:contract": "near dev-deploy",
-    "deploy:contract": "near deploy",
-    "dev": "yarn build && yarn dev:deploy:contract && env-cmd -f ./neardev/dev-account.env parcel src/index.html",
+    "dev": "yarn build:contract && near dev-deploy && nodemon --watch assembly -e ts --exec yarn dev:start",
     "lint": "eslint .",
     "start": "yarn deploy && parcel src/index.html",
-    "dev:start": "env CONTRACT_NAME=$(cat neardev/dev-account) parcel src/index.html",
+    "dev:start": "env-cmd -f ./neardev/dev-account.env parcel src/index.html",
     "test": "yarn build:contract && asp && jest"
   },
   "devDependencies": {
