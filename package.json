@@ -14,7 +14,7 @@
     "test": "yarn build:contract && asp && jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
