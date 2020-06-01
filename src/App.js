@@ -2,12 +2,13 @@ import 'regenerator-runtime/runtime'
 import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Big from 'big.js'
+import { ulid } from 'ulid'
 
 const SUGGESTED_DONATION = '1'
 const BOATLOAD_OF_GAS = Big(1).times(10 ** 16).toFixed()
 
 const App = ({ contract, currentUser, nearConfig, wallet }) => {
-  const [messages, setMessages] = useState([])
+  const [messages, setMessages] = useState({})
 
   useEffect(() => {
     // TODO: don't just fetch once; subscribe!
@@ -23,9 +24,11 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
 
     // TODO: optimistically update page with new message,
     // update blockchain data in background
-    // add uuid to each message, so we know which one is already known
     contract.addMessage(
-      { text: message.value },
+      {
+        id: ulid(),
+        text: message.value
+      },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
@@ -97,14 +100,14 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
           </fieldset>
         </form>
       )}
-      {!!messages.length && (
+      {!!Object.keys(messages).length && (
         <>
           <h2>Messages</h2>
-          {messages.map((message, i) =>
+          {Object.keys(messages).map(id =>
             // TODO: format as cards, add timestamp
-            <p key={i} className={message.premium ? 'is-premium' : ''}>
-              <strong>{message.sender}</strong>:<br/>
-              {message.text}
+            <p key={id} className={messages[id].premium ? 'is-premium' : ''}>
+              <strong>{messages[id].sender}</strong>:<br/>
+              {messages[id].text}
             </p>
           )}
         </>

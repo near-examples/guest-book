@@ -32,7 +32,7 @@
     "gh-pages": "^3.0.0",
     "jest": "^26.0.1",
     "jest-environment-node": "^26.0.1",
-    "near-sdk-as": "^0.3.3",
+    "near-sdk-as": "https://github.com/near/near-sdk-as#add_map_serialization",
     "near-shell": "^0.23.1",
     "nodemon": "^2.0.4",
     "parcel-bundler": "^1.12.4",
@@ -46,7 +46,8 @@
     "near-api-js": "^0.25.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.5",
+    "ulid": "^2.3.0"
   },
   "jest": {
     "projects": [

@@ -5926,10 +5926,9 @@ near-mock-vm@^0.1.0:
     js-base64 "^2.5.2"
     yargs "^15.3.1"
 
-near-sdk-as@^0.3.3:
+"near-sdk-as@https://github.com/near/near-sdk-as#add_map_serialization":
   version "0.3.3"
-  resolved "https://registry.yarnpkg.com/near-sdk-as/-/near-sdk-as-0.3.3.tgz#9ee732e38db1d3425699b43581e9d5c25aaabe01"
-  integrity sha512-i/V1EFuDGsEEPtCIBMIly7yVnhn9yL0faYhBjVXle4gMtPbewQhKPEdt63hU8n5vCna2GTt/K36U+VgjHXl4DQ==
+  resolved "https://github.com/near/near-sdk-as#007e2999dfa45f46620cbb3c480395b1b0adff8a"
   dependencies:
     "@as-pect/cli" "^3.1.4"
     as-bignum "^0.1.5"
@@ -8636,6 +8635,11 @@ u3@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/u3/-/u3-0.1.0.tgz#0060927663b68353c539cda99e9511d6687edd9d"
   integrity sha1-AGCSdmO2g1PFOc2pnpUR1mh+3Z0=
+
+ulid@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/ulid/-/ulid-2.3.0.tgz#93063522771a9774121a84d126ecd3eb9804071f"
+  integrity sha512-keqHubrlpvT6G2wH0OEfSW4mquYRcbe/J8NMmveoQOjUqmo+hXtO+ORCpWhdbZ7k72UtY61BL7haGxW6enBnjw==
 
 uncss@^0.17.2:
   version "0.17.3"
