@@ -7257,6 +7257,13 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-offline-first-helpers@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-offline-first-helpers/-/react-offline-first-helpers-1.0.1.tgz#e4f9e0a1ec764f1fec91d7249ead523a26545d2d"
+  integrity sha512-zt6+I8BYw7nHXOTubKGjX081bbj419JlgrpqSA/UI4aS8YA/37WTfbZdpSDmSgLkYIa2KS6ri9TLxxCnG4BlKw==
+  dependencies:
+    lodash "^4.17.15"
+
 react-test-renderer@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.13.1.tgz#de25ea358d9012606de51e012d9742e7f0deabc1"
