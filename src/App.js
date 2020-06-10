@@ -1,17 +1,31 @@
 import 'regenerator-runtime/runtime'
 import React, { useCallback, useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import Big from 'big.js'
+import Contract from './contract'
+import { account } from 'near-api'
 
 const SUGGESTED_DONATION = '1'
 const BOATLOAD_OF_GAS = Big(1).times(10 ** 16).toFixed()
 
-const App = ({ contract, currentUser, nearConfig, wallet }) => {
+const App = () => {
   const [messages, setMessages] = useState([])
+
+  const [currentUser, setCurrentUser] = useState()
+
+  useEffect(() => {
+    // fetch fresh account state (including balance) on app load
+    //
+    // if user logged in, `account.state()` returns current user's info;
+    // else, returns null
+    //
+    // note: if timely balance info is needed for your app, you may want to
+    // subscribe to this call, using something like react-offline-first-helpers
+    account.state().then(setCurrentUser)
+  }, [])
 
   useEffect(() => {
     // TODO: don't just fetch once; subscribe!
-    contract.getMessages().then(setMessages)
+    Contract.getMessages().then(setMessages)
   }, [])
 
   const onSubmit = useCallback(e => {
@@ -24,12 +38,12 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
     // TODO: optimistically update page with new message,
     // update blockchain data in background
     // add uuid to each message, so we know which one is already known
-    contract.addMessage(
+    Contract.addMessage(
       { text: message.value },
       BOATLOAD_OF_GAS,
       Big(donation.value || '0').times(10 ** 24).toFixed()
     ).then(() => {
-      contract.getMessages().then(messages => {
+      Contract.getMessages().then(messages => {
         setMessages(messages)
 
         message.value = ''
@@ -38,18 +52,18 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
         message.focus()
       })
     })
-  }, [contract])
+  }, [])
 
   const signIn = useCallback(() => {
-    wallet.requestSignIn(
-      nearConfig.contractName,
+    account.login(
+      process.env.CONTRACT_NAME,
       'NEAR Guest Book'
     )
   }, [])
 
   const signOut = useCallback(() => {
-    wallet.signOut()
-    window.location = '/'
+    account.logout()
+    setCurrentUser(null)
   }, [])
 
   return (
@@ -111,24 +125,6 @@ const App = ({ contract, currentUser, nearConfig, wallet }) => {
       )}
     </main>
   )
-}
-
-App.propTypes = {
-  contract: PropTypes.shape({
-    addMessage: PropTypes.func.isRequired,
-    getMessages: PropTypes.func.isRequired
-  }).isRequired,
-  currentUser: PropTypes.shape({
-    accountId: PropTypes.string.isRequired,
-    balance: PropTypes.string.isRequired
-  }),
-  nearConfig: PropTypes.shape({
-    contractName: PropTypes.string.isRequired
-  }).isRequired,
-  wallet: PropTypes.shape({
-    requestSignIn: PropTypes.func.isRequired,
-    signOut: PropTypes.func.isRequired
-  }).isRequired
 }
 
 export default App

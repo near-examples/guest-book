@@ -73,9 +73,17 @@ Now authorize NEAR shell for this new account, and follow the instructions it gi
 Step 2: set contract name in code
 ---------------------------------
 
-Modify the line in `src/config.js` that sets the account name of the contract. Set it to the account id you used above.
+Create a `.env.production` file with the following line, setting `your-account-name` to the account name you just logged in with:
 
-    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'your-account-here!'
+    CONTRACT_NAME=your-account-name
+
+What does this do? Let's step back a little and walk through it.
+
+If you look in the `scripts` section of `package.json`, you'll see that it uses [parcel] to run and build the frontend code.
+
+Creating a `.env.production` file is how you [tell Parcel what environment variables to set][parcel-env] when running in production mode. Parcel uses these "production" variables when you run `parcel build`. If you look in `package.json` again, you'll see that's one of the commands that gets run when you type `yarn build`.
+
+So! With this file in place, when you run `yarn build`, everywhere that the code uses `process.env.CONTRACT_NAME` will be set to `'your-account-name'`. Perfect!
 
 
 Step 3: deploy!
@@ -104,4 +112,6 @@ As you can see in `package.json`, this does two things:
   [near-shell]: https://github.com/nearprotocol/near-shell
   [CLI]: https://www.w3schools.com/whatis/whatis_cli.asp
   [create-near-app]: https://github.com/nearprotocol/create-near-app
+  [parcel]: https://parceljs.org/
+  [parcel-env]: https://parceljs.org/env.html
   [gh-pages]: https://github.com/tschaub/gh-pages
