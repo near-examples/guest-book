@@ -8,7 +8,7 @@ import * as nearAPI from 'near-api-js'
 async function initContract () {
   const nearConfig = getConfig(process.env.NODE_ENV || 'development')
 
-  // Initializing connection to the NEAR DevNet
+  // Initializing connection to the NEAR TestNet
   const near = await nearAPI.connect({
     deps: {
       keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore()

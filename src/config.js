@@ -20,14 +20,6 @@ function getConfig (env) {
         walletUrl: 'https://wallet.testnet.near.org',
         helperUrl: 'https://helper.testnet.near.org'
       }
-    case 'devnet':
-      return {
-        networkId: 'devnet',
-        nodeUrl: 'https://rpc.devnet.near.org',
-        contractName: CONTRACT_NAME,
-        walletUrl: 'https://wallet.devnet.near.org',
-        helperUrl: 'https://helper.devnet.near.org'
-      }
     case 'betanet':
       return {
         networkId: 'betanet',
